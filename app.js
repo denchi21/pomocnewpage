@@ -20,6 +20,32 @@ Promise.all(
   .then(() => {
     document.getElementById('year').textContent = new Date().getFullYear();
 
+    const heroVideo = document.querySelector('.hero-video');
+    const connection =
+      navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const slowConnection =
+      connection?.saveData || /(^|-)2g$/.test(connection?.effectiveType || '');
+
+    if (heroVideo && !reducedMotion && !slowConnection) {
+      let waitingTimer;
+
+      const showPoster = () => heroVideo.classList.add('is-unavailable');
+      const showVideo = () => {
+        window.clearTimeout(waitingTimer);
+        heroVideo.classList.remove('is-unavailable');
+      };
+
+      heroVideo.addEventListener('error', showPoster);
+      heroVideo.addEventListener('abort', showPoster);
+      heroVideo.addEventListener('waiting', () => {
+        waitingTimer = window.setTimeout(showPoster, 1800);
+      });
+      heroVideo.addEventListener('playing', showVideo);
+
+      heroVideo.play().catch(showPoster);
+    }
+
     const form = document.getElementById('contact-form');
 
     const formStartedAt = Date.now();
