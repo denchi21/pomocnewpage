@@ -39,13 +39,13 @@ SYSTEM_THEME.addEventListener('change', (event) => {
 
 Promise.all(
   SECTIONS.map(async ([elementId, fileName]) => {
-    const response = await fetch(`sections/${fileName}.html`);
+    const RESPONSE = await fetch(`sections/${fileName}.html`);
 
-    if (!response.ok) {
+    if (!RESPONSE.ok) {
       throw new Error(`Nepodařilo se načíst ${fileName}`);
     }
 
-    document.getElementById(elementId).innerHTML = await response.text();
+    document.getElementById(elementId).innerHTML = await RESPONSE.text();
   }),
 )
   .then(() => {
