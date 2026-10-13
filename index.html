@@ -4,6 +4,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#f6f5f0">
+    <script>
+      (() => {
+        const savedTheme = localStorage.getItem('pomoc-theme');
+        const preferredTheme = window.matchMedia('(prefers-color-scheme: dark)').matches
+          ? 'dark'
+          : 'light';
+        document.documentElement.dataset.theme = savedTheme || preferredTheme;
+      })();
+    </script>
     <meta name="description" content="POMOC, k.s. — účetnictví, daňové poradenství, mzdy a auditorské služby v Českém Dubu.">
     <title>
       POMOC, k.s. — účetnictví, daně a audit
@@ -18,7 +27,14 @@
       <a class="brand" href="#domu" aria-label="POMOC, k.s. – úvod"><span class="brand-mark">P</span><span>POMOC<span class="brand-suffix">, k.s.</span></span></a>
       <nav aria-label="Hlavní navigace">
         <a href="#sluzby">Služby</a><a href="#o-nas">O nás</a><a href="#kontakt" class="nav-cta">Kontaktujte nás<span>↗</span></a>
-      </nav><button class="menu-toggle" aria-label="Otevřít navigaci" aria-expanded="false">☰</button>
+      </nav>
+      <div class="topbar-actions">
+        <button class="theme-toggle" type="button" aria-label="Přepnout na tmavý režim" title="Přepnout motiv">
+          <span class="theme-icon theme-icon-sun" aria-hidden="true">☼</span>
+          <span class="theme-icon theme-icon-moon" aria-hidden="true">☾</span>
+        </button>
+        <button class="menu-toggle" aria-label="Otevřít navigaci" aria-expanded="false">☰</button>
+      </div>
     </header>
     <main id="domu">
       <div id="hero">

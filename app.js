@@ -6,6 +6,37 @@ const sections = [
   ['contact', 'contact'],
 ];
 
+const themeToggle = document.querySelector('.theme-toggle');
+const systemTheme = window.matchMedia('(prefers-color-scheme: dark)');
+
+const applyTheme = (theme) => {
+  document.documentElement.dataset.theme = theme;
+  document.querySelector('meta[name="theme-color"]')?.setAttribute(
+    'content',
+    theme === 'dark' ? '#141b17' : '#f6f5f0',
+  );
+
+  if (themeToggle) {
+    const nextTheme = theme === 'dark' ? 'světlý' : 'tmavý';
+    themeToggle.setAttribute('aria-label', `Přepnout na ${nextTheme} režim`);
+    themeToggle.setAttribute('title', `Přepnout na ${nextTheme} režim`);
+  }
+};
+
+applyTheme(localStorage.getItem('pomoc-theme') || (systemTheme.matches ? 'dark' : 'light'));
+
+themeToggle?.addEventListener('click', () => {
+  const nextTheme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+  localStorage.setItem('pomoc-theme', nextTheme);
+  applyTheme(nextTheme);
+});
+
+systemTheme.addEventListener('change', (event) => {
+  if (!localStorage.getItem('pomoc-theme')) {
+    applyTheme(event.matches ? 'dark' : 'light');
+  }
+});
+
 Promise.all(
   sections.map(async ([elementId, fileName]) => {
     const response = await fetch(`sections/${fileName}.html`);
