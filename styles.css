@@ -68,13 +68,13 @@ body {
   min-height: 96px;
 }
 #services {
-  min-height: 760px;
+  min-height: 850px;
 }
 #about {
-  min-height: 600px;
+  min-height: 650px;
 }
 #contact {
-  min-height: 630px;
+  min-height: 800px;
 }
 a {
   color: inherit;
@@ -986,19 +986,19 @@ footer {
 }
 @media(max-width: 850px) {
   #hero {
-    min-height: 700px;
+    min-height: 850px;
   }
   #trust {
-    min-height: 125px;
+    min-height: 135px;
   }
   #services {
-    min-height: 1080px;
+    min-height: 1120px;
   }
   #about {
-    min-height: 650px;
+    min-height: 700px;
   }
   #contact {
-    min-height: 700px;
+    min-height: 900px;
   }
   .Topbar {
     padding: 0 25px;
@@ -1032,7 +1032,7 @@ footer {
 }
 @media(max-width: 620px) {
   #hero {
-    min-height: 760px;
+    min-height: 820px;
   }
   #trust {
     min-height: 180px;
@@ -1044,7 +1044,7 @@ footer {
     min-height: 900px;
   }
   #contact {
-    min-height: 1100px;
+    min-height: 1200px;
   }
   .Topbar {
     height: 69px;
