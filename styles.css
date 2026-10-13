@@ -61,6 +61,21 @@ body {
   font-size: 15px;
   line-height: 1.65;
 }
+#hero {
+  min-height: 605px;
+}
+#trust {
+  min-height: 96px;
+}
+#services {
+  min-height: 760px;
+}
+#about {
+  min-height: 600px;
+}
+#contact {
+  min-height: 630px;
+}
 a {
   color: inherit;
   text-decoration: none;
@@ -962,11 +977,29 @@ footer {
   }
 }
 @media(max-width: 1200px) {
+  #services {
+    min-height: 1080px;
+  }
   .ServiceGrid {
     grid-template-columns: repeat(2,1fr);
   }
 }
 @media(max-width: 850px) {
+  #hero {
+    min-height: 700px;
+  }
+  #trust {
+    min-height: 125px;
+  }
+  #services {
+    min-height: 1080px;
+  }
+  #about {
+    min-height: 650px;
+  }
+  #contact {
+    min-height: 700px;
+  }
   .Topbar {
     padding: 0 25px;
   }
@@ -998,6 +1031,21 @@ footer {
   }
 }
 @media(max-width: 620px) {
+  #hero {
+    min-height: 760px;
+  }
+  #trust {
+    min-height: 180px;
+  }
+  #services {
+    min-height: 1640px;
+  }
+  #about {
+    min-height: 900px;
+  }
+  #contact {
+    min-height: 1100px;
+  }
   .Topbar {
     height: 69px;
   }
