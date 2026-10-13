@@ -22,21 +22,63 @@ Promise.all(
 
     const form = document.getElementById('contact-form');
 
-    form.addEventListener('submit', (event) => {
+    const formStartedAt = Date.now();
+
+    form.addEventListener('submit', async (event) => {
       event.preventDefault();
 
+      const note = document.getElementById('form-note');
       const data = new FormData(form);
-      const subject = encodeURIComponent(`Poptávka z webu — ${data.get('topic')}`);
-      const body = encodeURIComponent(
-        `Jméno: ${data.get('name')}\n` +
-          `E-mail: ${data.get('email')}\n` +
-          `Oblast: ${data.get('topic')}\n\n` +
-          data.get('message'),
-      );
+      const honeypot = String(data.get('_honey') || '').trim();
 
-      window.location.href = `mailto:pomocks@pomocks.cz?subject=${subject}&body=${body}`;
-      document.getElementById('form-note').textContent =
-        'Zpráva je připravena ve vašem e-mailovém programu. Zkontrolujte ji a odešlete.';
+      if (honeypot || Date.now() - formStartedAt < 2500) {
+        note.textContent = 'Zprávu se nepodařilo odeslat. Zkuste to prosím znovu.';
+        return;
+      }
+
+      if (!form.reportValidity()) return;
+
+      const recipient = window.CONTACT_FORM_CONFIG?.recipient;
+      if (!recipient) {
+        note.textContent = 'Odeslání zprávy není momentálně nastavené. Zavolejte nám nebo napište e-mail.';
+        return;
+      }
+
+      const submitButton = form.querySelector('.form-submit');
+      submitButton.disabled = true;
+      note.textContent = 'Odesíláme zprávu…';
+
+      const payload = Object.fromEntries(data.entries());
+      payload._subject = `Poptávka z webu — ${payload.topic}`;
+      payload._replyto = payload.email;
+      payload._template = 'table';
+
+      try {
+        const response = await fetch(
+          `https://formsubmit.co/ajax/${encodeURIComponent(recipient)}`,
+          {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              Accept: 'application/json',
+            },
+            body: JSON.stringify(payload),
+          },
+        );
+        const result = await response.json();
+
+        if (!response.ok || result.success === 'false' || result.success === false) {
+          throw new Error('FormSubmit submission failed');
+        }
+
+        form.reset();
+        note.textContent = 'Děkujeme, zpráva byla odeslána. Brzy se vám ozveme.';
+      } catch (error) {
+        note.textContent = 'Odeslání se nezdařilo. Napište nám prosím přímo na uvedený e-mail.';
+        console.error(error);
+      } finally {
+        submitButton.disabled = false;
+      }
     });
 
     const menuToggle = document.querySelector('.menu-toggle');

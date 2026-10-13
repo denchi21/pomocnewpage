@@ -19,7 +19,7 @@
       <span>IČ: 615 38 469</span><span>DIČ: CZ61538469</span>
     </div>
   </div>
-  <form class="contact-form" id="contact-form">
+  <form class="contact-form" id="contact-form" novalidate>
     <h3>
       Napište nám
     </h3>
@@ -27,10 +27,25 @@
       Odpovíme co nejdříve během pracovních dnů.
     </p>
     <div class="form-row">
-      <label>Jméno a příjmení<input name="name" autocomplete="name" required placeholder="Jak vám říkáme?"></label><label>E-mail<input name="email" type="email" autocomplete="email" required placeholder="vas@email.cz"></label>
-    </div><label>Jak vám můžeme pomoci?<select name="topic"><option>Vyberte oblast</option><option>Účetnictví a daňová evidence</option><option>Daňové poradenství</option><option>Mzdová agenda</option><option>Auditorské služby</option><option>Jiné</option></select></label><label>Zpráva<textarea name="message" rows="4" required placeholder="Stručně popište, co potřebujete."></textarea></label><label class="privacy-check"><input type="checkbox" required><span>Beru na vědomí<a href="privacy.html" target="_blank" rel="noopener">informace o zpracování osobních údajů</a>.</span></label><button class="button button-dark form-submit" type="submit">Připravit zprávu<span>↗</span></button>
-    <p class="form-note" id="form-note">
-      Po odeslání se otevře váš e-mailový program s připravenou zprávou.
+      <label for="contact-name">Jméno a příjmení<input id="contact-name" name="name" autocomplete="name" required maxlength="120" placeholder="Jak vám říkáme?"></label>
+      <label for="contact-email">E-mail<input id="contact-email" name="email" type="email" autocomplete="email" required maxlength="254" placeholder="vas@email.cz"></label>
+    </div>
+    <label for="contact-topic">Jak vám můžeme pomoci?<select id="contact-topic" name="topic" required>
+      <option value="" selected disabled>Vyberte oblast</option>
+      <option>Účetnictví a daňová evidence</option>
+      <option>Daňové poradenství</option>
+      <option>Mzdová agenda</option>
+      <option>Auditorské služby</option>
+      <option>Jiné</option>
+    </select></label>
+    <label for="contact-message">Zpráva<textarea id="contact-message" name="message" rows="5" required minlength="10" maxlength="5000" placeholder="Stručně popište, co potřebujete."></textarea></label>
+    <div class="form-trap" aria-hidden="true">
+      <label for="contact-website">Nevyplňujte toto pole<input id="contact-website" name="_honey" tabindex="-1" autocomplete="off"></label>
+    </div>
+    <label class="privacy-check" for="privacy-consent"><input id="privacy-consent" name="privacy-consent" type="checkbox" required><span>Beru na vědomí <a href="privacy.html" target="_blank" rel="noopener">informace o zpracování osobních údajů</a>.</span></label>
+    <button class="button button-dark form-submit" type="submit">Odeslat zprávu<span>↗</span></button>
+    <p class="form-note" id="form-note" aria-live="polite" role="status">
+      Zpráva bude odeslána bezpečně přes formulář.
     </p>
   </form>
 </section>
