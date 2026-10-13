@@ -58,7 +58,7 @@ body {
   background: var(--paper);
   color: var(--ink);
   font-family: var(--sans);
-  font-size: 15px;
+  font-size: 16px;
   line-height: 1.65;
 }
 #hero {
@@ -174,7 +174,7 @@ nav {
   display: flex;
   align-items: center;
   gap: 38px;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 600;
 }
 nav a:not(.NavCta) {
@@ -185,6 +185,33 @@ nav a:not(.NavCta) {
   color: white;
   padding: 12px 17px;
   border-radius: 3px;
+}
+.Button,
+.NavCta {
+  transition: background-color .2s ease, color .2s ease, border-color .2s ease,
+    transform .2s ease, box-shadow .2s ease;
+}
+.Button span,
+.NavCta span {
+  display: inline-block;
+  transition: transform .2s ease;
+}
+.Button:hover,
+.NavCta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px #1a35251f;
+}
+.ButtonDark:hover,
+.NavCta:hover {
+  background: #285743;
+}
+.Button:hover span,
+.NavCta:hover span {
+  transform: translateX(3px);
+}
+.Button:active,
+.NavCta:active {
+  transform: translateY(0) scale(.98);
 }
 .NavCta span, .Button span {
   padding-left: 13px;
@@ -326,7 +353,7 @@ h1 em, h2 em {
   border: 0;
   cursor: pointer;
   padding: 15px 19px;
-  font: 600 13px var(--sans);
+  font: 600 14px var(--sans);
   border-radius: 3px;
 }
 .ButtonDark {
@@ -334,7 +361,7 @@ h1 em, h2 em {
   color: white;
 }
 .TextLink {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
   color: var(--green);
 }
@@ -346,7 +373,7 @@ h1 em, h2 em {
   align-items: center;
   gap: 13px;
   margin-top: 54px;
-  font-size: 11px;
+  font-size: 12px;
   color: #778079;
 }
 .NoteLine {
@@ -497,7 +524,7 @@ h1 em, h2 em {
   font: 600 15px var(--display);
 }
 .TrustInner span {
-  font-size: 10px;
+  font-size: 11px;
   color: var(--muted);
   margin-top: 4px;
 }
@@ -518,7 +545,7 @@ h1 em, h2 em {
 .SectionIntro {
   max-width: 390px;
   color: var(--muted);
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.8;
   margin: 0 0 3px;
 }
@@ -566,7 +593,7 @@ h1 em, h2 em {
   margin-bottom: 22px;
 }
 .ServiceNumber {
-  font-size: 8px;
+  font-size: 9px;
   letter-spacing: 1.2px;
   font-weight: 700;
   color: #839087;
@@ -577,7 +604,7 @@ h1 em, h2 em {
   margin: 10px 0;
 }
 .ServiceCard p {
-  font-size: 11px;
+  font-size: 12px;
   line-height: 1.75;
   color: #737d76;
   margin-bottom: 12px;
@@ -589,7 +616,7 @@ h1 em, h2 em {
   list-style: none;
 }
 .ServiceCard li {
-  font-size: 10px;
+  font-size: 11px;
   color: #68736b;
   margin: 5px 0;
   padding-left: 12px;
@@ -685,7 +712,7 @@ h1 em, h2 em {
   margin-bottom: 23px;
 }
 .AboutCopy>p:not(.Eyebrow) {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--muted);
   line-height: 1.9;
 }
@@ -716,10 +743,10 @@ h1 em, h2 em {
   display: block;
 }
 .Credentials strong {
-  font-size: 11px;
+  font-size: 12px;
 }
 .Credentials small {
-  font-size: 9px;
+  font-size: 10px;
   color: var(--muted);
   line-height: 1.5;
   margin-top: 3px;
@@ -734,7 +761,7 @@ h1 em, h2 em {
 .ContactIntro>p:not(.Eyebrow) {
   max-width: 350px;
   color: var(--muted);
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.8;
   margin-top: 20px;
 }
@@ -761,12 +788,12 @@ h1 em, h2 em {
   display: block;
 }
 .ContactDetails small {
-  font-size: 8px;
+  font-size: 9px;
   letter-spacing: 1.2px;
   color: #849087;
 }
 .ContactDetails strong {
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 600;
   line-height: 1.6;
 }
@@ -776,7 +803,7 @@ h1 em, h2 em {
   margin-top: 27px;
   padding-top: 15px;
   border-top: 1px solid var(--line);
-  font-size: 10px;
+  font-size: 11px;
   color: #79837c;
 }
 .ContactForm {
@@ -786,17 +813,17 @@ h1 em, h2 em {
   box-shadow: 0 15px 45px #1a35250a;
 }
 .ContactForm h3 {
-  font: 600 23px var(--display);
+  font: 600 25px var(--display);
   margin-bottom: 4px;
 }
 .ContactForm>p {
-  font-size: 11px;
+  font-size: 13px;
   color: #818a83;
   margin-bottom: 20px;
 }
 .ContactForm label {
   display: block;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 600;
   color: var(--ink);
   margin-bottom: 14px;
@@ -817,7 +844,7 @@ h1 em, h2 em {
   border: 1px solid var(--line);
   border-radius: 2px;
   background: var(--field);
-  font: 12px var(--sans);
+  font: 14px var(--sans);
   color: var(--ink);
   outline-color: #92b278;
 }
@@ -844,7 +871,7 @@ h1 em, h2 em {
   display: flex!important;
   align-items: start;
   gap: 8px;
-  font-size: 9px!important;
+  font-size: 11px!important;
   color: #737e76!important;
   font-weight: 400!important;
 }
@@ -868,7 +895,7 @@ h1 em, h2 em {
   float: right;
 }
 .FormNote {
-  font-size: 9px!important;
+  font-size: 10px!important;
   margin: 11px 0 0!important;
   color: #88928b!important;
 }
@@ -972,7 +999,11 @@ footer {
 }
 @media (prefers-reduced-motion: reduce) {
   .ThemeIcon,
-  .ThemeToggle {
+  .ThemeToggle,
+  .Button,
+  .NavCta,
+  .Button span,
+  .NavCta span {
     transition: none;
   }
 }
