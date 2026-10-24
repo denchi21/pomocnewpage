@@ -676,6 +676,20 @@ h1 em, h2 em {
 .AboutMonogram span {
   color: var(--lime);
 }
+.AboutPhotoNote {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  z-index: 2;
+  max-width: 190px;
+  margin: 0;
+  padding: 8px 11px;
+  border: 1px solid #a8c095;
+  background: #17251f66;
+  color: #e7ede6;
+  font-size: 12px;
+  line-height: 1.5;
+}
 .AboutCaption {
   position: absolute;
   left: 29px;
