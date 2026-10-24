@@ -464,8 +464,8 @@ h1 em, h2 em {
   right: 7%;
   bottom: 48px;
   z-index: 2;
-  width: 105px;
-  height: 105px;
+  width: 115px;
+  height: 115px;
   border-radius: 50%;
   background: var(--green);
   color: white;
@@ -478,8 +478,9 @@ h1 em, h2 em {
   transform: rotate(8deg);
 }
 .ArtSeal span {
-  font-size: 11px;
-  letter-spacing: 1px;
+  font-size: 10px;
+  letter-spacing: .8px;
+  white-space: nowrap;
 }
 .ArtSeal strong {
   font: 700 27px var(--serif);
@@ -1145,10 +1146,14 @@ footer {
     gap: 8px;
   }
   .ArtSeal {
-    width: 85px;
-    height: 85px;
+    width: 96px;
+    height: 96px;
     right: 4%;
     bottom: 23px;
+  }
+  .ArtSeal span {
+    font-size: 9px;
+    letter-spacing: .5px;
   }
   .ArtSeal strong {
     font-size: 23px;
