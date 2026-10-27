@@ -1,4 +1,4 @@
-/* Шапка сайта и навигация */
+/* Site header and navigation */
 .Topbar {
   height: 82px;
   padding: 0 max(calc((100vw - 1200px)/2),6vw);

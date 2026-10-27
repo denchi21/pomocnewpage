@@ -1,4 +1,4 @@
-/* Адаптивность и размеры экранов */
+/* Responsive layouts and breakpoints */
 @media (prefers-reduced-motion: reduce) {
   .ThemeIcon,
   .ThemeToggle,

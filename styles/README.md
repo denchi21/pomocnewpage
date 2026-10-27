@@ -1,23 +1,23 @@
-# Стили сайта
+# Stylesheet structure
 
-Редактируйте тематические файлы в этой папке. Порядок подключения задаёт список в `scripts/build-styles.mjs`.
+Edit the focused CSS source files in this folder. Their load order is defined in `scripts/build-styles.mjs`.
 
-Чтобы собрать их в единый `styles.css`, выполните из корневой папки сайта:
+To combine them into the single `styles.css` file used by the website, run this command from the project root:
 
 ```sh
 node scripts/build-styles.mjs
 ```
 
-`styles.css` — итоговый файл, который загружает сайт. Ручные правки в нём будут перезаписаны при следующей сборке.
+`styles.css` is generated output. Manual edits to it will be overwritten the next time you build.
 
-## Разделы
+## Sections
 
-1. `01-settings.css` — цвета, шрифты и общие правила.
-2. `02-navigation.css` — шапка и навигация.
-3. `03-hero.css` — главный экран.
-4. `04-trust-services.css` — преимущества и услуги.
-5. `05-about.css` — раздел о компании.
-6. `06-contact.css` — контакты и форма.
-7. `07-footer-privacy.css` — подвал и страница приватности.
-8. `08-theme.css` — тёмная тема и настройки анимации.
-9. `09-responsive.css` — планшетная и мобильная адаптация.
+1. `01-settings.css` — colors, fonts and shared defaults.
+2. `02-navigation.css` — site header and navigation.
+3. `03-hero.css` — hero section.
+4. `04-trust-services.css` — trust highlights and services.
+5. `05-about.css` — about section.
+6. `06-contact.css` — contact details and form.
+7. `07-footer-privacy.css` — footer and privacy page.
+8. `08-theme.css` — dark theme and motion preferences.
+9. `09-responsive.css` — tablet and mobile layouts.

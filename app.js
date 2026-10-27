@@ -9,7 +9,7 @@ const SECTIONS = [
 const THEME_TOGGLE = document.querySelector('.ThemeToggle');
 const SYSTEM_THEME = window.matchMedia('(prefers-color-scheme: dark)');
 
-/** Применяет выбранную тему, обновляет цвет браузера и подпись кнопки. */
+/** Applies the selected theme and updates the browser theme color and toggle label. */
 function applyTheme(theme) {
   document.documentElement.dataset.theme = theme;
   document.querySelector('meta[name="theme-color"]')?.setAttribute(
@@ -24,14 +24,14 @@ function applyTheme(theme) {
   }
 }
 
-/** Переключает тему по нажатию и сохраняет выбор на этом устройстве. */
+/** Toggles the theme and saves the selection on this device. */
 function handleThemeToggle() {
   const nextTheme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
   localStorage.setItem('pomoc-theme', nextTheme);
   applyTheme(nextTheme);
 }
 
-/** Подстраивает тему под систему, только пока пользователь сам её не выбрал. */
+/** Follows the system theme until the user chooses a theme manually. */
 function handleSystemThemeChange(event) {
   if (!localStorage.getItem('pomoc-theme')) {
     applyTheme(event.matches ? 'dark' : 'light');
@@ -42,7 +42,7 @@ applyTheme(localStorage.getItem('pomoc-theme') || (SYSTEM_THEME.matches ? 'dark'
 THEME_TOGGLE?.addEventListener('click', handleThemeToggle);
 SYSTEM_THEME.addEventListener('change', handleSystemThemeChange);
 
-/** Загружает HTML одного раздела в соответствующий контейнер страницы. */
+/** Loads one section HTML file into its page container. */
 async function loadSection([elementId, fileName]) {
   const response = await fetch(`sections/${fileName}.html`);
 
@@ -53,19 +53,19 @@ async function loadSection([elementId, fileName]) {
   document.getElementById(elementId).innerHTML = await response.text();
 }
 
-/** Запускает инициализацию интерактивных элементов после загрузки всех разделов. */
+/** Initializes interactive features after all page sections have loaded. */
 function initializePage() {
   document.getElementById('year').textContent = new Date().getFullYear();
   initializeContactForm();
   initializeMobileNavigation();
 }
 
-/** Подключает обработчик отправки формы и защищает её от простых ботов. */
+/** Attaches the form submit handler and adds basic bot protection. */
 function initializeContactForm() {
   const form = document.getElementById('contact-form');
   const formStartedAt = Date.now();
 
-  /** Проверяет форму и отправляет её содержимое в настроенный сервис FormSubmit. */
+  /** Validates the form and sends its contents through the configured FormSubmit service. */
   async function handleContactSubmit(event) {
     event.preventDefault();
 
@@ -125,12 +125,12 @@ function initializeContactForm() {
   form.addEventListener('submit', handleContactSubmit);
 }
 
-/** Запускает мобильное меню и закрывает его после выбора ссылки. */
+/** Sets up the mobile menu and closes it after a link is selected. */
 function initializeMobileNavigation() {
   const menuToggle = document.querySelector('.MenuToggle');
   const navigation = document.querySelector('nav');
 
-  /** Меняет состояние кнопки и показывает или скрывает навигацию. */
+  /** Updates the toggle state and shows or hides the navigation. */
   function toggleNavigation() {
     const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
 
@@ -138,7 +138,7 @@ function initializeMobileNavigation() {
     navigation.classList.toggle('NavOpen', !isOpen);
   }
 
-  /** Закрывает мобильное меню после перехода по ссылке. */
+  /** Closes the mobile menu after a navigation link is selected. */
   function closeNavigation() {
     navigation.classList.remove('NavOpen');
     menuToggle.setAttribute('aria-expanded', 'false');
@@ -150,7 +150,7 @@ function initializeMobileNavigation() {
   }
 }
 
-/** Показывает подсказку, если браузеру не удалось загрузить HTML-разделы. */
+/** Shows a helpful message if the browser cannot load the page sections. */
 function showSectionLoadError() {
   document.querySelector('main').innerHTML =
     '<p class="LoadError">Obsah se nepodařilo načíst. Spusťte web přes lokální HTTP server, například příkazem <code>python -m http.server</code> ve složce webu.</p>';

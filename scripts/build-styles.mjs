@@ -15,12 +15,12 @@ const CSS_PARTS = [
   '09-responsive.css',
 ];
 
-/** Читает один исходный файл CSS из папки styles. */
+/** Reads one source CSS file from the styles folder. */
 function readCssPart(fileName) {
   return readFile(path.join(ROOT_DIR, 'styles', fileName), 'utf8');
 }
 
-/** Собирает CSS-разделы в один файл, который подключён на сайте. */
+/** Combines the CSS sections into the single stylesheet used by the site. */
 async function buildStylesheet() {
   const parts = await Promise.all(CSS_PARTS.map(readCssPart));
   const output = [
@@ -32,7 +32,7 @@ async function buildStylesheet() {
   console.log(`Built styles.css from ${CSS_PARTS.length} sections.`);
 }
 
-/** Выводит причину ошибки сборки и сообщает Node.js о неудачном завершении. */
+/** Reports the build error and marks the Node.js process as failed. */
 function reportBuildError(error) {
   console.error('Could not build styles.css:', error);
   process.exitCode = 1;

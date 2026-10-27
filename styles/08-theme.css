@@ -1,4 +1,4 @@
-/* Цветовые корректировки тёмной темы и анимации */
+/* Dark theme adjustments and motion preferences */
 :root[data-theme='dark'] .ServiceCard p,
 :root[data-theme='dark'] .ServiceCard li,
 :root[data-theme='dark'] .AboutCopy>p:not(.Eyebrow),
