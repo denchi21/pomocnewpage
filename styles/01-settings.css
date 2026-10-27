@@ -1,0 +1,91 @@
+/* Цветовые переменные, шрифты и общие правила */
+:root {
+  --paper: #f6f5f0;
+  --white: #fff;
+  --ink: #17251f;
+  --muted: #69736d;
+  --green: #1c4536;
+  --lime: #c6e3a4;
+  --line: #dedfd8;
+  --band: #e9ece4;
+  --cardHover: #edf2e8;
+  --field: #fcfcfa;
+  --link: #1c4536;
+  --serif: 'Site Serif', Georgia, 'Times New Roman', serif;
+  --sans: 'Site Sans', Arial, sans-serif;
+  --display: 'Site Display', Arial, sans-serif;
+}
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --paper: #28322c;
+  --white: #333e36;
+  --ink: #f0f3ef;
+  --muted: #c1ccc3;
+  --green: #456d52;
+  --lime: #d0e8ae;
+  --line: #4a574e;
+  --band: #333e36;
+  --cardHover: #3d4941;
+  --field: #303a33;
+  --link: #d0e8ae;
+}
+:root[data-theme='light'] {
+  color-scheme: light;
+}
+* {
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: 'Site Sans';
+  src: local('Arial');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Site Display';
+  src: local('Arial');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Site Serif';
+  src: local('Georgia');
+  font-display: swap;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.65;
+}
+#hero {
+  min-height: 605px;
+}
+#trust {
+  min-height: 96px;
+}
+#services {
+  min-height: 850px;
+}
+#about {
+  min-height: 650px;
+}
+#contact {
+  min-height: 800px;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #89a873;
+  outline-offset: 3px;
+}

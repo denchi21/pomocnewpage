@@ -1,0 +1,141 @@
+/* Преимущества и список услуг */
+.TrustBand {
+  background: var(--band);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.TrustInner {
+  list-style: none;
+  padding-left: 0;
+  max-width: 1200px;
+  padding: 26px 30px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 20px;
+}
+.TrustInner>li {
+  padding-left: 18px;
+  border-left: 1px solid var(--line);
+}
+.TrustInner strong, .TrustInner span {
+  display: block;
+}
+.TrustInner strong {
+  font: 600 17px var(--display);
+}
+.TrustInner span {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 4px;
+}
+.ServicesSection {
+  padding-top: 108px;
+  padding-bottom: 95px;
+}
+.SectionHeading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin-bottom: 41px;
+}
+.SectionHeading h2, .AboutCopy h2, .ContactIntro h2 {
+  font-size: clamp(39px,4vw,52px);
+  margin-bottom: 0;
+}
+.SectionIntro {
+  max-width: 390px;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.8;
+  margin: 0 0 3px;
+}
+.ServiceGrid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 13px;
+}
+.ServiceCard {
+  background: var(--white);
+  border: 1px solid var(--line);
+  padding: 24px 20px 21px;
+  min-height: 325px;
+  display: flex;
+  flex-direction: column;
+  transition: background-color .2s ease, color .2s ease, border-color .2s ease, transform .2s ease, box-shadow .2s ease;
+}
+.ServiceCard:hover {
+  background: var(--cardHover);
+  border-color: #91a982;
+  color: var(--ink);
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px #1a352514;
+}
+.ServiceCard:hover .ServiceIcon {
+  background: #dce8d2;
+  color: var(--green);
+}
+.ServiceCard:hover p,
+.ServiceCard:hover li {
+  color: var(--muted);
+}
+.ServiceCard:hover ul {
+  border-color: #d4dfce;
+}
+.ServiceIcon {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: var(--green);
+  background: #edf2e8;
+  font-size: 17px;
+  margin-bottom: 22px;
+}
+.ServiceNumber {
+  font-size: 11px;
+  letter-spacing: 1.2px;
+  font-weight: 700;
+  color: #839087;
+}
+.ServiceCard h3 {
+  font: 600 19px/1.25 var(--display);
+  letter-spacing: -.5px;
+  margin: 10px 0;
+}
+.ServiceCard p {
+  font-size: 14px;
+  line-height: 1.75;
+  color: #737d76;
+  margin-bottom: 12px;
+}
+.ServiceCard ul {
+  padding: 12px 0 0;
+  margin: auto 0 0;
+  border-top: 1px solid #edf0ea;
+  list-style: none;
+}
+.ServiceCard li {
+  font-size: 13px;
+  color: #68736b;
+  margin: 5px 0;
+  padding-left: 12px;
+  position: relative;
+}
+.ServiceCard li:before {
+  content: '·';
+  position: absolute;
+  left: 0;
+  color: #6d9556;
+  font-size: 17px;
+  line-height: 13px;
+}
+.ServicesFootnote {
+  font-size: 12px;
+  color: #88918b;
+  margin: 15px 0 0;
+}

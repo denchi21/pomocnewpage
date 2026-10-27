@@ -1,0 +1,238 @@
+/* Адаптивность и размеры экранов */
+@media (prefers-reduced-motion: reduce) {
+  .ThemeIcon,
+  .ThemeToggle,
+  .Button,
+  .NavCta,
+  .Button span,
+  .NavCta span {
+    transition: none;
+  }
+}
+@media(max-width: 1200px) {
+  #services {
+    min-height: 1080px;
+  }
+  .ServiceGrid {
+    grid-template-columns: repeat(2,1fr);
+  }
+}
+@media(max-width: 850px) {
+  #hero {
+    min-height: 850px;
+  }
+  #trust {
+    min-height: 135px;
+  }
+  #services {
+    min-height: 1120px;
+  }
+  #about {
+    min-height: 700px;
+  }
+  #contact {
+    min-height: 900px;
+  }
+  .Topbar {
+    padding: 0 25px;
+  }
+  .Hero {
+    min-height: auto;
+    grid-template-columns: 1fr;
+    padding-top: 65px;
+  }
+  .HeroArt {
+    height: 360px;
+    margin-top: 5px;
+  }
+  .TrustInner {
+    grid-template-columns: repeat(2,1fr);
+    row-gap: 23px;
+  }
+  .ServiceGrid {
+    grid-template-columns: repeat(2,1fr);
+  }
+  .AboutLayout {
+    gap: 6%;
+  }
+  .ContactSection {
+    gap: 6%;
+  }
+  .SectionWrap {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+}
+@media(max-width: 620px) {
+  #hero {
+    min-height: 820px;
+  }
+  #trust {
+    min-height: 180px;
+  }
+  #services {
+    min-height: 1640px;
+  }
+  #about {
+    min-height: 900px;
+  }
+  #contact {
+    min-height: 1200px;
+  }
+  .Topbar {
+    height: 69px;
+  }
+  .MenuToggle {
+    display: block;
+  }
+  nav {
+    display: none;
+    position: absolute;
+    top: 68px;
+    left: 0;
+    right: 0;
+    background: var(--paper);
+    padding: 18px 24px 24px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+    border-bottom: 1px solid var(--line);
+  }
+  nav.NavOpen {
+    display: flex;
+  }
+  .NavCta {
+    text-align: center;
+  }
+  .Hero {
+    padding-top: 49px;
+    padding-bottom: 47px;
+  }
+  .Hero h1 {
+    font-size: 53px;
+  }
+  .HeroLead {
+    font-size: 16px;
+  }
+  .HeroActions {
+    gap: 17px;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .HeroNote {
+    margin-top: 33px;
+  }
+  .HeroArt {
+    height: 300px;
+  }
+  .ArtOrbit {
+    width: 285px;
+    height: 285px;
+  }
+  .OrbitTwo {
+    width: 225px;
+    height: 225px;
+  }
+  .ArtCard {
+    width: 290px;
+    padding: 20px;
+    min-height: 230px;
+  }
+  .ArtAmount {
+    font-size: 22px;
+    margin-top: 20px;
+  }
+  .Chart {
+    height: 78px;
+    gap: 8px;
+  }
+  .ArtSeal {
+    width: 96px;
+    height: 96px;
+    right: 4%;
+    bottom: 23px;
+  }
+  .ArtSeal span {
+    font-size: 9px;
+    letter-spacing: .5px;
+  }
+  .ArtSeal strong {
+    font-size: 23px;
+  }
+  .TrustInner {
+    padding: 22px 24px;
+    gap: 18px 10px;
+  }
+  .TrustInner>li {
+    padding-left: 11px;
+  }
+  .TrustInner strong {
+    font-size: 14px;
+  }
+  .TrustInner span {
+    font-size: 11px;
+  }
+  .ServicesSection {
+    padding-top: 69px;
+    padding-bottom: 65px;
+  }
+  .SectionHeading {
+    display: block;
+  }
+  .SectionHeading h2, .AboutCopy h2, .ContactIntro h2 {
+    font-size: 42px;
+  }
+  .SectionIntro {
+    margin-top: 17px;
+  }
+  .ServiceGrid {
+    grid-template-columns: 1fr;
+  }
+  .ServiceCard {
+    min-height: 275px;
+  }
+  .AboutSection {
+    padding: 60px 0;
+  }
+  .AboutLayout {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+  .AboutVisual {
+    min-height: 300px;
+  }
+  .AboutMonogram {
+    font-size: 175px;
+  }
+  .Credentials {
+    grid-template-columns: 1fr;
+  }
+  .ContactSection {
+    grid-template-columns: 1fr;
+    gap: 33px;
+    padding-top: 67px;
+    padding-bottom: 70px;
+  }
+  .ContactForm {
+    padding: 24px 19px;
+  }
+  .FormRow {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .FooterInner {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .FooterBottom {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .PrivacyPage {
+    margin: 55px auto 80px;
+  }
+  .PrivacyPage h1 {
+    font-size: 39px;
+  }
+}

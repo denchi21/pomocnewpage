@@ -1,0 +1,65 @@
+/* Подвал и страница приватности */
+footer {
+  background: #17251f;
+  color: #e7ede6;
+  padding: 25px max(calc((100vw - 1200px)/2),6vw) 19px;
+}
+.FooterInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ffffff20;
+  padding-bottom: 22px;
+}
+.FooterBrand {
+  font-size: 17px;
+}
+.FooterBrand .BrandMark {
+  background: #d6e4cc;
+  color: var(--green);
+}
+.FooterBrand .BrandSuffix {
+  color: #bdc9be;
+}
+.FooterInner>span, .FooterInner>a:last-child {
+  font-size: 12px;
+  color: #c2ccc3;
+}
+.FooterInner>a:last-child span {
+  color: var(--lime);
+  margin-left: 8px;
+}
+.FooterBottom {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 16px;
+  color: #929e94;
+  font-size: 11px;
+}
+.FooterBottom a:hover {
+  text-decoration: underline;
+}
+.PrivacyPage {
+  max-width: 780px;
+  margin: 80px auto 120px;
+  padding: 0 26px;
+}
+.PrivacyPage h1 {
+  font-size: 48px;
+}
+.PrivacyPage p:not(.Eyebrow) {
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.9;
+}
+.PrivacyPage a {
+  text-decoration: underline;
+}
+.LoadError {
+  padding: 100px 10%;
+  text-align: center;
+}
+.LoadError code {
+  background: #e8e9e4;
+  padding: 3px 6px;
+}

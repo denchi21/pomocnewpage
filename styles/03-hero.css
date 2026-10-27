@@ -1,0 +1,269 @@
+/* Главный экран и декоративные элементы */
+.Hero {
+  min-height: 605px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding-top: 55px;
+  padding-bottom: 65px;
+  position: relative;
+  isolation: isolate;
+  color: #fff;
+}
+.HeroBackground {
+  display: block;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  overflow: hidden;
+  background: #182d25;
+}
+.HeroBackground picture,
+.HeroImage {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.HeroImage {
+  object-fit: cover;
+  object-position: center 52%;
+}
+.HeroBackground::after {
+  position: absolute;
+  inset: 0;
+  content: '';
+  background: linear-gradient(90deg, #10251dd9 0%, #142d24bd 48%, #142d2499 100%),
+    linear-gradient(0deg, #10251d55, transparent 55%);
+  pointer-events: none;
+}
+.Hero .Eyebrow {
+  color: var(--lime);
+}
+.Hero h1 em {
+  color: var(--lime);
+}
+.Hero .HeroLead {
+  color: #e4ebe5;
+}
+.Hero .TextLink {
+  color: var(--lime);
+}
+.Hero .HeroNote {
+  color: #e1e9e1;
+}
+.Hero .ButtonDark {
+  background: var(--lime);
+  color: var(--green);
+  transition: background-color .2s ease, transform .2s ease;
+}
+.Hero .ButtonDark:hover {
+  background: #d5ebb9;
+  transform: translateY(-2px);
+}
+.Hero .ButtonDark span {
+  color: var(--green);
+}
+.Eyebrow {
+  margin: 0 0 20px;
+  text-transform: uppercase;
+  letter-spacing: 1.8px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--green);
+}
+.EyebrowDot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #86ab63;
+  margin-right: 8px;
+  vertical-align: 1px;
+}
+h1, h2, h3, p {
+  margin-top: 0;
+}
+h1, h2 {
+  font-family: var(--display);
+  font-weight: 600;
+  letter-spacing: -2.8px;
+  line-height: 1.08;
+}
+h1 {
+  font-size: clamp(50px,5.5vw,73px);
+  margin-bottom: 24px;
+}
+h1 em, h2 em {
+  font-family: var(--serif);
+  font-weight: 400;
+  color: #52755e;
+}
+.HeroLead {
+  max-width: 440px;
+  color: #66716a;
+  font-size: 18px;
+  line-height: 1.8;
+}
+.HeroActions {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin-top: 31px;
+}
+.Button {
+  display: inline-block;
+  border: 0;
+  cursor: pointer;
+  padding: 15px 19px;
+  font: 600 16px var(--sans);
+  border-radius: 3px;
+}
+.ButtonDark {
+  background: var(--green);
+  color: white;
+}
+.TextLink {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--green);
+}
+.TextLink span {
+  margin-left: 9px;
+}
+.HeroNote {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-top: 54px;
+  font-size: 14px;
+  color: #778079;
+}
+.NoteLine {
+  height: 1px;
+  width: 35px;
+  background: #93aa88;
+}
+.HeroArt {
+  height: 420px;
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+.ArtOrbit {
+  position: absolute;
+  border: 1px solid #dce2d5;
+  border-radius: 50%;
+  width: 390px;
+  height: 390px;
+}
+.OrbitTwo {
+  width: 300px;
+  height: 300px;
+  border-color: #e6e8e1;
+}
+.ArtCard {
+  position: relative;
+  background: #fff;
+  width: 355px;
+  min-height: 255px;
+  padding: 24px 26px 22px;
+  box-shadow: 0 25px 75px #1a35251b;
+  transform: rotate(-3deg);
+  border: 1px solid #e6e9e1;
+  z-index: 1;
+}
+.ArtCardTop {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  color: #78837b;
+}
+.ArtDot {
+  width: 8px;
+  height: 8px;
+  background: #9dbf7a;
+  border-radius: 50%;
+}
+.ArtAmount {
+  margin-top: 27px;
+  font: 600 26px var(--display);
+  letter-spacing: -.8px;
+}
+.ArtAmount span {
+  display: block;
+  font: 14px var(--sans);
+  letter-spacing: 0;
+  color: #849087;
+  margin-top: 4px;
+}
+.Chart {
+  height: 92px;
+  border-bottom: 1px solid #e4e7e0;
+  display: flex;
+  align-items: end;
+  gap: 11px;
+  margin-top: 17px;
+}
+.Chart i {
+  display: block;
+  flex: 1;
+  background: #a7c58e;
+  border-radius: 2px 2px 0 0;
+}
+.Chart i:nth-child(2n) {
+  background: #d2e3c2;
+}
+.ChartLabels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: #9aa49c;
+  margin-top: 7px;
+}
+.ArtSeal {
+  position: absolute;
+  right: 7%;
+  bottom: 48px;
+  z-index: 2;
+  width: 115px;
+  height: 115px;
+  border-radius: 50%;
+  background: var(--green);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border: 5px solid var(--paper);
+  outline: 1px solid #45644d;
+  transform: rotate(8deg);
+}
+.ArtSeal span {
+  font-size: 10px;
+  letter-spacing: .8px;
+  white-space: nowrap;
+}
+.ArtSeal strong {
+  font: 700 27px var(--serif);
+  color: var(--lime);
+  line-height: 1.2;
+}
+.ArtSpark {
+  position: absolute;
+  color: #89a873;
+  font-size: 22px;
+}
+.SparkA {
+  top: 26px;
+  left: 21%;
+}
+.SparkB {
+  bottom: 39px;
+  left: 12%;
+  font-size: 13px;
+}

@@ -1,0 +1,146 @@
+/* Шапка сайта и навигация */
+.Topbar {
+  height: 82px;
+  padding: 0 max(calc((100vw - 1200px)/2),6vw);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(23,37,31,.08);
+  background: var(--paper);
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+.TopbarActions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.ThemeToggle {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: var(--white);
+  color: var(--ink);
+  cursor: pointer;
+  transition: background-color .25s ease, border-color .25s ease, transform .25s ease;
+}
+:root[data-theme='dark'] .Topbar {
+  border-bottom-color: #ffffff18;
+}
+.ThemeToggle:hover {
+  transform: rotate(-12deg);
+  border-color: #9ab28d;
+}
+.ThemeIcon {
+  position: absolute;
+  font: 24px/1 var(--sans);
+  transition: transform .4s cubic-bezier(.2,.8,.2,1), opacity .25s ease;
+}
+.ThemeIconSun {
+  color: #b78126;
+  transform: translateY(0) rotate(0);
+  opacity: 1;
+}
+.ThemeIconMoon {
+  color: #c5d6f4;
+  transform: translateY(24px) rotate(-45deg);
+  opacity: 0;
+}
+:root[data-theme='dark'] .ThemeIconSun {
+  transform: translateY(-24px) rotate(45deg);
+  opacity: 0;
+}
+:root[data-theme='dark'] .ThemeIconMoon {
+  transform: translateY(0) rotate(0);
+  opacity: 1;
+}
+.Brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  font: 800 20px var(--display);
+  letter-spacing: -1px;
+}
+.BrandMark {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  background: var(--green);
+  color: var(--lime);
+  border-radius: 50%;
+  font: 700 18px var(--serif);
+}
+.BrandSuffix {
+  font-weight: 500;
+  color: var(--muted);
+}
+nav {
+  display: flex;
+  align-items: center;
+  gap: 38px;
+  font-size: 16px;
+  font-weight: 600;
+}
+nav a:not(.NavCta) {
+  color: var(--muted);
+}
+.NavCta {
+  background: var(--green);
+  color: white;
+  padding: 12px 17px;
+  border-radius: 3px;
+}
+.Button,
+.NavCta {
+  transition: background-color .2s ease, color .2s ease, border-color .2s ease,
+    transform .2s ease, box-shadow .2s ease;
+}
+.Button span,
+.NavCta span {
+  display: inline-block;
+  transition: transform .2s ease;
+}
+.Button:hover,
+.NavCta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px #1a35251f;
+}
+.ButtonDark:hover,
+.NavCta:hover {
+  background: #285743;
+}
+.Button:hover span,
+.NavCta:hover span {
+  transform: translateX(3px);
+}
+.Button:active,
+.NavCta:active {
+  transform: translateY(0) scale(.98);
+}
+.NavCta span, .Button span {
+  padding-left: 13px;
+  color: var(--lime);
+}
+.MenuToggle {
+  display: none;
+  background: none;
+  border: 0;
+  font-size: 23px;
+  color: var(--ink);
+}
+:root[data-theme='dark'] nav a:not(.NavCta) {
+  color: var(--muted);
+}
+.SectionWrap {
+  max-width: 1200px;
+  margin: auto;
+  padding-left: 30px;
+  padding-right: 30px;
+}

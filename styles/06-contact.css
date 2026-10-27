@@ -1,0 +1,157 @@
+/* Контакты и форма обратной связи */
+.ContactSection {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 11%;
+  padding-top: 103px;
+  padding-bottom: 105px;
+}
+.ContactIntro>p:not(.Eyebrow) {
+  max-width: 350px;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.8;
+  margin-top: 20px;
+}
+.ContactDetails {
+  font-style: normal;
+  margin-top: 30px;
+  display: grid;
+  gap: 18px;
+}
+.ContactDetails>a, .ContactDetails>p {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+.ContactDetails>p {
+  margin: 0;
+}
+.DetailIcon {
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: var(--green);
+}
+.ContactDetails small, .ContactDetails strong {
+  display: block;
+}
+.ContactDetails small {
+  font-size: 11px;
+  letter-spacing: 1.2px;
+  color: #849087;
+}
+.ContactDetails strong {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.6;
+}
+.CompanyData {
+  display: grid;
+  grid-template-columns: repeat(4, max-content);
+  gap: 0 10px;
+  margin-top: 27px;
+  padding-top: 15px;
+  border-top: 1px solid var(--line);
+  font-size: 13px;
+  color: #79837c;
+}
+.CompanyData dd {
+  margin: 0;
+}
+.ContactForm {
+  background: var(--white);
+  padding: 34px;
+  border: 1px solid var(--line);
+  box-shadow: 0 15px 45px #1a35250a;
+}
+.ContactForm h3 {
+  font: 600 25px var(--display);
+  margin-bottom: 4px;
+}
+.ContactForm>p {
+  font-size: 15px;
+  color: #818a83;
+  margin-bottom: 20px;
+}
+.ContactForm label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 14px;
+}
+.ContactForm .FormRow label {
+  min-width: 0;
+}
+.FormRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 13px;
+}
+.ContactForm input:not([type=checkbox]), .ContactForm select, .ContactForm textarea {
+  display: block;
+  width: 100%;
+  margin-top: 6px;
+  padding: 11px 12px;
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  background: var(--field);
+  font: 16px var(--sans);
+  color: var(--ink);
+  outline-color: #92b278;
+}
+.ContactForm input,
+.ContactForm select,
+.ContactForm textarea {
+  min-width: 0;
+}
+.FormTrap {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+.ContactForm textarea {
+  resize: vertical;
+}
+.PrivacyCheck {
+  display: flex!important;
+  align-items: start;
+  gap: 8px;
+  font-size: 13px!important;
+  color: #737e76!important;
+  font-weight: 400!important;
+}
+.PrivacyCheck input {
+  margin: 2px 0 0;
+  accent-color: var(--green);
+}
+.PrivacyCheck a {
+  text-decoration: underline;
+  color: var(--link);
+}
+.FormSubmit {
+  width: 100%;
+  text-align: left;
+}
+.FormSubmit:disabled {
+  cursor: wait;
+  opacity: .7;
+}
+.FormSubmit span {
+  float: right;
+}
+.FormNote {
+  font-size: 12px!important;
+  margin: 11px 0 0!important;
+  color: #88928b!important;
+}

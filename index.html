@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#f6f5f0">
     <script>
+      // Выбирает тему до первого отображения страницы, чтобы избежать вспышки другого оформления.
       (() => {
         const SAVED_THEME = localStorage.getItem('pomoc-theme');
         const PREFERRED_THEME = window.matchMedia('(prefers-color-scheme: dark)').matches
@@ -20,7 +21,7 @@
       POMOC, k.s. — účetnictví, daně a audit
     </title>
     <link rel="stylesheet" href="modernnormalize.css">
-    <link rel="stylesheet" href="styles.css?v=3">
+    <link rel="stylesheet" href="styles.css?v=4">
   </head>
   <body>
     <header class="Topbar">
