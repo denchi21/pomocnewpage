@@ -1249,3 +1249,50 @@ footer {
     font-size: 39px;
   }
 }
+
+
+/* Semantic element resets */
+.TrustInner {
+  list-style: none;
+  padding-left: 0;
+}
+.TrustInner > li {
+  padding-left: 18px;
+  border-left: 1px solid var(--line);
+}
+.ServiceGrid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.AboutVisual {
+  margin: 0;
+}
+.Credentials {
+  list-style: none;
+  padding-left: 0;
+}
+.Credentials > li {
+  display: flex;
+  gap: 10px;
+}
+.ContactDetails {
+  font-style: normal;
+}
+.ContactDetails > a,
+.ContactDetails > p {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+.ContactDetails > p {
+  margin: 0;
+}
+.CompanyData {
+  display: grid;
+  grid-template-columns: repeat(4, max-content);
+  gap: 0 10px;
+}
+.CompanyData dd {
+  margin: 0;
+}
